@@ -1,0 +1,34 @@
+﻿@model IEnumerable<StoryModel>
+
+@{
+    ViewData["Title"] = "Stories";
+    int id = 0;
+}
+
+<link rel="stylesheet" href="~/css/StoriesStyles.css" />
+<h1>Stories</h1>
+
+<div class="container">
+    @for (int i = 0; i < 5; i++)
+    {
+        <div class="row">
+            @for (int j = 0; j < 4; j++)
+            {
+                id++;
+                <div class="col-md-3 hovereffect mb-3 mb-md-3">
+                    <img class="img-responsive" src="~/img/test1.jpg" width="85%" />
+                    <a asp-controller="Stories" asp-action="Story" asp-route-id=@id>
+                        <div id="stText" class="overlay text-center text-light pr-1 pr-md-1 pl-1 pl-md-1">
+                            <br />Предел | Порт Эйвон<br />
+                            <br />
+                            Чудный аромат затмевает запах угля и машинного масла: почти невозможный аромат зелени и яблок.
+                            <br />
+                            <br />
+                            Тихая деревушка, приютившаяся среди древних руин. Ее порт напоминает фермерский двор, а жители Эйвона быстро устают от посетителей.
+                        </div>
+                    </a>
+                </div>
+            }
+        </div>
+    }
+</div>

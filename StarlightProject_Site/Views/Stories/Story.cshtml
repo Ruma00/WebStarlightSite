@@ -1,0 +1,15 @@
+﻿@model StoryModel
+@{
+    ViewData["Title"] = "Story";
+}
+
+<div class="text-center">
+    <h2>История #@Model.StoryID - @Model.StoryName</h2>
+
+    <div class="container text-light bg-dark">
+        История <br />
+        Поставь лайк) <br />
+
+        <img src="~/img/@(Model.StoryImg).jpg">
+    </div>
+</div>

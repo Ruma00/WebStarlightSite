@@ -1,0 +1,30 @@
+﻿@model StoryModel
+@{
+    ViewData["Title"] = "AddStory";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>AddStory</h1>
+
+<div class="container-fluid">
+    <script src="~/js/ckeditor/ckeditor.js"></script>
+
+    <form asp-controller="Stories" asp-action="AddStory" class="form-group">
+        <div class="col-md-2">
+            <label asp-for="StoryName"></label><br />
+            <input asp-for="StoryName" /><br />
+        </div>
+        <div class="col-md-8 form-text align-content-end">
+            <textarea id="content-add" name="content-add"></textarea>
+        </div>
+        <div>
+            <input type="submit" value="Send" />
+        </div>
+    </form>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function (event) {
+            var editor = CKEDITOR.replace('content-add')
+        });
+    </script>
+</div>
